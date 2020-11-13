@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap')
+
+html {
+	font-size: 12px;
+}
+
+body {
+	margin-top: 0;
+}
+
+/* style the header/navigation bar of the website*/
+.header {
+	background-color: #FFFFFF;
+	padding: 0.3em;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	font-family: 'Bebas Neue', cursive;
+	font-size: 1.5em;
+	position: fixed;
+	top: 0;
+	width: 100%;
+}
+
+#navIcon {
+	margin-top: -0.1em;
+	padding-left: 0.2em;
+	padding-right: 0.2em;
+	float: right;
+	cursor: pointer;
+	display: none;
+}
+
+/* set size of logo */
+.logo {
+	height: 3em;
+}
+
+/* style the parts of navigation bar */
+.navBar1, .navBar2 {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+/* set alignment of links of navigation bar */
+.navBar1 li, .navBar2 li {
+	display: inline-block;
+}
+
+/* set padding of navBar1 */
+.navBar1 li {
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+/* set padding of navBar2 */
+.navBar2 li {
+	padding-left: 0.3em;
+	padding-right: 0.3em;
+}
+
+/* style search and cart icons */
+.cart, .search {
+	margin-bottom: -0.1em;
+	height: 1em;
+}
+
+#check {
+	display: none;
+}
+
+/* style links of navigation bar */
+.navLink:link, .signup:link, .login:link {
+	color: black;
+	text-decoration: none;
+	position: relative;
+}
+
+/* style links of navigation bar when visited */
+.navLink:visited, .signup:visited, .login:visited  {
+	color: black;
+}
+
+/* create pseudo element (underline) for navigation and animate */
+.navLink::after {
+	border-radius: 1em;
+	border-top: 0.2em solid #5C959C;
+	content: "";
+	position: absolute;
+	top: 1.2em;
+	left: 0;
+	right: 0;
+	transform: scaleX(0);
+	transition: transform 0.3s ease-in-out;
+}
+
+/* show pseudo element (underline) when hovered over link */
+.navLink:hover::after {
+	transform: scaleX(1);
+}
+
+/* show pseudo element (underline) when link is active */
+.navLink:active::after {
+	transform: scaleX(1);
+}
+
+/* create separator */
+.signup {
+	padding-right: 0.8em;
+	border-right: 0.1em solid #BEB9B4;
+}
+
+/* style main div */
+.main {
+	margin-top: 1em;
+	padding: 5em 5em;
+	font-family: 'Karla', sans-serif;
+	color: black;
+}
+
+/* style banner image */
+.banner {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	height: auto;
+	width: 100%;
+}
+
+.menu {
+	display: none;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgb(0, 0, 0); /* Fallback color */
+	background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.navContent {
+	background-color: #FEFEFE;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	padding: 0.5em;
+	font-family: 'Bebas Neue', cursive;
+	font-size: 1.5em;
+	border: 1px solid #888;
+	height: 100vh;
+	width: 60vw;
+}
+
+.close {
+	color: #BEB9B4;
+	float: right;
+	font-size: 2em;
+	font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+	.logo {
+		height: 10vw;
+	}
+
+	.navBar1 {
+		display: none;
+	}
+
+	.navBar2 a:not(.iconBar) {
+		display: none;
+	}
+
+	#navIcon {
+		display: inline-block;
+	}
+
+	.main {
+		padding: 1em 1em;
+	}
+}
